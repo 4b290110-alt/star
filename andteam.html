@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+<script src="script.js"></script>
+    <title>&TEAM</title>
+    <link rel="icon" href="images/2.jpg">
+    <link rel="stylesheet" href="style.css">
+        <!-- Bootstrap CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	  <style>
+		  a:link{color:#355F9F}
+		  a:visited{color:#54a82a}
+		  a:hover{color:#717823}
+	  </style>
+
+</head>
+
+<body>
+        <!-- 評價視窗 -->
+<div id="reviewModal" class="review-modal">
+
+    <div class="review-content">
+
+        <!-- 關閉按鈕 -->
+        <span class="close-btn"
+              onclick="closeReview()">
+
+            ✖
+
+        </span>
+
+        <h2>評價</h2>
+
+        <div class="review-body">
+
+            <!-- 左邊：評分表單 -->
+            <div class="review-form">
+
+                <div class="review-stars">
+
+                    <span onclick="setRating(1)">☆</span>
+                    <span onclick="setRating(2)">☆</span>
+                    <span onclick="setRating(3)">☆</span>
+                    <span onclick="setRating(4)">☆</span>
+                    <span onclick="setRating(5)">☆</span>
+
+                </div>
+
+                <p id="ratingText">
+
+                    尚未評分
+
+                </p>
+
+                <textarea
+                    placeholder="留下你的心得..."
+                    rows="5">
+                </textarea>
+
+                <button>
+
+                    送出評價
+
+                </button>
+
+            </div>
+
+            <!-- 右邊：評論區 -->
+            <div class="review-list">
+
+                <h3>
+
+                    ⭐ 4.7（28則評價）
+
+                </h3>
+
+                <div class="review-item">
+
+                    ⭐⭐⭐⭐⭐
+
+                    <p>漢堡好吃！</p>
+
+                </div>
+
+                <div class="review-item">
+
+                    ⭐⭐⭐⭐
+
+                    <p>寵物友善👍</p>
+
+                </div>
+
+                <div class="review-item">
+
+                    ⭐⭐⭐⭐⭐
+
+                    <p></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+        <!-- 最上方導覽列 -->
+    <header class="andteam">
+
+        <!-- Logo -->
+        <div class="logo">
+            <p><img src="images/and1.jpg" width="90" height="90" ></p>
+        </div>
+        <!-- 團綜分類選單-->
+        <div class="dropdown">
+
+            <button class="dropbtn">
+
+                出處 ▼
+
+            </button>
+
+            <div class="dropdown-content">
+
+                <a href="#" onclick="showCategory('place-card')">
+                    ALL
+                </a>
+                <a href="#" onclick="showCategory('023')">
+                        TOKYO023
+                </a>
+                <a href="#" onclick="showCategory('go')">
+                    Go ONE!!!
+                </a>
+                <a href="#" onclick="showCategory('ad')">
+                    &DAY
+                </a>
+                <a href="#" onclick="showCategory('wvs')">
+                    weverse
+                </a>
+                <a href="#" onclick="showCategory('dm')">
+                    DM
+                </a>
+                
+            </div>
+
+        </div>
+        <!-- 成員分類選單-->
+        <div class="dropdown">
+
+            <button class="dropbtn">
+
+                成員 ▼
+
+            </button>
+
+            <div class="dropdown-content">
+
+                <a href="#" onclick="showCategory('K')">
+                        K
+                </a>
+                <a href="#" onclick="showCategory('fufu')">
+                    FUMA
+                </a>
+                <a href="#" onclick="showCategory('nico')">
+                    NICHOLAS
+                </a>
+                 <a href="#" onclick="showCategory('ej')">
+                        EJ
+                </a>
+                <a href="#" onclick="showCategory('yuma')">
+                    YUMA
+                </a>
+                <a href="#" onclick="showCategory('jo')">
+                    JO
+                </a>
+                 <a href="#" onclick="showCategory('haru')">
+                        HARUA
+                </a>
+                <a href="#" onclick="showCategory('taki')">
+                    TAKI
+                </a>
+                <a href="#" onclick="showCategory('maki')">
+                    MAKI
+                </a>
+            </div>
+
+        </div>
+        <!-- 國家分類選單-->
+        <div class="dropdown">
+
+            <button class="dropbtn">
+
+                國家 ▼
+
+            </button>
+
+            <div class="dropdown-content">
+
+                <a href="#" onclick="showCategory('tw')">
+                     台灣
+                </a>
+                <a href="#" onclick="showCategory('kr')">
+                        韓國
+                </a>
+                <a href="#" onclick="showCategory('jp')">
+                    日本
+                </a>
+                
+            </div>
+
+        </div>
+        <!-- 搜尋框 -->
+        <div class="search-box">
+            <input style="font-size: 20px;" type="text" placeholder="搜尋偶像或餐廳名...">
+        </div>
+
+        <!-- 導覽列 -->
+        <nav class="menu">
+
+           <a href="index.html" class="icon-btn"><img src="images/8.jpg" width="25" height="25"></a>
+           <a href="fav.html" class="icon-btn"> <img src="images/7.jpg" width="25" height="25"></a>
+           <a href="login.html" class="icon-btn"><img src="images/5.jpg" width="25" height="25"></a>
+
+        </nav>
+        
+
+
+    </header>
+
+
+    <div class="place-container">
+
+            <!-- 景點卡片 -->
+
+        <!--脆皮鮮奶甜甜圈-->
+        <div class="place-card  yuma wvs tw">
+
+    <img src="images/and2.jpg">
+
+    <div class="place-info">
+
+        <h2>📍 台灣人ㄟ脆皮鮮奶甜甜圈晴光店</h2>
+
+        <div class="rating">
+
+            ⭐ 4.7 (28則評價)
+
+        </div>
+
+        <p class="source-link">
+
+            <a href="https://weverse.io/andteam/artist/4-202090698?hl=zh-tw">
+
+                🔗2025.06.19 Yuma wvs
+
+            </a>
+
+        </p>
+
+        <div class="action-group">
+
+            <button class="save-btn">
+                ❤️ 收藏
+            </button>
+
+            <button class="visit-btn"
+               onclick="toggleVisited(this)">
+
+                ✔ 已打卡
+
+            </button>
+
+            <a class="map-btn"
+               href="https://maps.app.goo.gl/97uNkTtSDA55mnvQ8"
+               target="_blank">
+
+                🗺️ 查看地圖
+
+            </a>
+
+        </div>
+
+    </div>
+
+        </div>
+        <!-- BeBu-->
+            <div class="place-card  023 nico maki jo jp">
+
+    <img src="images/and3.jpg">
+
+        <div class="place-info">
+
+            <h2>📍 BeBu（ビブ）</h2>
+
+        <div class="rating"
+        onclick="openReview()">
+
+        ⭐ 4.7 (28則評價)
+
+        </div>
+
+            <p class="source-link">
+
+                <a href="https://youtu.be/1Ay_FmeZveY?si=R_lPOjjPk5pHk_Go&t=1262">
+
+                    🔗2025.03.20 TOKYO023
+
+                </a>
+
+            </p>
+
+            <div class="action-group">
+
+                <button class="save-btn">
+                    ❤️ 收藏
+                </button>
+
+                <button class="visit-btn"
+            onclick="toggleVisited(this)">
+
+                    ✔ 已打卡
+
+                </button>
+
+                <a class="map-btn"
+                href="https://maps.app.goo.gl/Vdwe5iKTpuFN5nkF6"
+                target="_blank">
+
+                    🗺️ 查看地圖
+
+                </a>
+
+            </div>
+
+        </div>
+
+        </div>
+        <!--大阪燒 櫻亭-->
+            <div class="place-card  wvs nico maki jp">
+
+    <img src="images/and4.jpg">
+
+    <div class="place-info">
+
+        <h2>📍 大阪燒 櫻亭</h2>
+
+        <div class="rating">
+
+            ⭐ 4.7 (28則評價)
+
+        </div>
+
+        <p class="source-link">
+
+            <a href="https://weverse.io/andteam/artist/0-155667541?hl=zh-tw">
+
+                🔗2025.02.09 Nico wvs
+
+            </a>
+
+        </p>
+
+        <div class="action-group">
+
+            <button class="save-btn">
+                ❤️ 收藏
+            </button>
+
+            <button class="visit-btn"
+        onclick="toggleVisited(this)">
+
+                ✔ 已打卡
+
+            </button>
+
+            <a class="map-btn"
+               href="https://maps.app.goo.gl/CvExnH9uV3JB9pTEA"
+               target="_blank">
+
+                🗺️ 查看地圖
+
+            </a>
+
+        </div>
+
+    </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
